@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Lab1.Task1" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="Main" />
+    <module name="Lab1.Task2" />
+    <option name="PROGRAM_PARAMETERS" value="&quot;Apple/малое&quot; &quot;Eggs/одно&quot; &quot;Apple/большое&quot; &quot;Cheese&quot; &quot;Eggs/одно&quot; &quot;Eggs/два&quot; -sort -calories " />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

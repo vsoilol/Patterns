@@ -11,15 +11,11 @@
 target/
 dist/
 
-# JetBrains IDE
-.idea/
-*.iml
-
 # Unit test reports
 TEST*.xml
 
 # Applications
-*.app
+#*.app
 *.exe
 *.war
 
@@ -30,3 +26,8 @@ TEST*.xml
 *.flv
 *.mov
 *.wmv
+
+# JetBrains IDE
+*/.idea/*.xml
+*.iml
+!*/.idea/runConfigurations
