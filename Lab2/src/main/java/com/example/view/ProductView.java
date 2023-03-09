@@ -30,24 +30,12 @@ public class ProductView implements ViewBase{
             int choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
-                    listProducts();
-                    break;
-                case 2:
-                    getProductsByName(scanner);
-                    break;
-                case 3:
-                    findProductsByNameAndMaxPrice(scanner);
-                    break;
-                case 4:
-                    getProductsWithStorageTimeAfter(scanner);
-                    break;
-                case 5:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Invalid choice, please try again");
-                    break;
+                case 1 -> listProducts();
+                case 2 -> getProductsByName(scanner);
+                case 3 -> findProductsByNameAndMaxPrice(scanner);
+                case 4 -> getProductsWithStorageTimeAfter(scanner);
+                case 5 -> System.exit(0);
+                default -> System.out.println("Invalid choice, please try again");
             }
         }
     }
