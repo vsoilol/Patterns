@@ -4,11 +4,6 @@ import com.example.controller.IProductController;
 import com.example.controller.IUserController;
 import com.example.controller.ProductController;
 import com.example.controller.UserController;
-import com.example.dao.IUserRepository;
-import com.example.dao.UserRepository;
-import com.example.service.IUserService;
-import com.example.service.UserService;
-import com.example.singletons.UserControllerSingleton;
 import com.example.view.*;
 import com.example.view.command.*;
 
@@ -20,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        IUserController userController = UserControllerSingleton.getInstance();
+        IUserController userController = UserController.getInstance();
 
         IProductController productController = new ProductController();
 

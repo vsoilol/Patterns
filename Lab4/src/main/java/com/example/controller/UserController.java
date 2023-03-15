@@ -2,12 +2,15 @@ package com.example.controller;
 
 import com.example.beans.User;
 import com.example.service.IUserService;
+import com.example.service.UserService;
 
 public class UserController implements IUserController{
+    private static final IUserController userController = new UserController();
+
     private final IUserService userService;
 
-    public UserController(IUserService userService){
-        this.userService = userService;
+    private UserController(){
+        this.userService = UserService.getInstance();
     }
 
     @Override
@@ -23,5 +26,9 @@ public class UserController implements IUserController{
     @Override
     public User findByUsername(String username) {
         return userService.findByUsername(username);
+    }
+
+    public static IUserController getInstance() {
+        return userController;
     }
 }

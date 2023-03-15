@@ -2,14 +2,17 @@ package com.example.service;
 
 import com.example.beans.User;
 import com.example.dao.IUserRepository;
+import com.example.dao.UserRepository;
 
 import java.util.List;
 
 public class UserService implements IUserService{
+    private static final IUserService userService = new UserService();
+
     private final IUserRepository userRepository;
 
-    public UserService(IUserRepository userRepository) {
-        this.userRepository = userRepository;
+    private UserService(){
+        userRepository = UserRepository.getInstance();
     }
 
     @Override
@@ -38,5 +41,9 @@ public class UserService implements IUserService{
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    public static IUserService getInstance(){
+        return userService;
     }
 }
