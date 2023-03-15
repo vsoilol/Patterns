@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository implements IUserRepository {
+    private static final IUserRepository userRepository = new UserRepository();
+
+    private UserRepository(){}
+
     public final List<User> users = new ArrayList<>() {{
         add(new User("user1", "12345"));
     }};
@@ -21,5 +25,9 @@ public class UserRepository implements IUserRepository {
     @Override
     public void save(User user) {
         users.add(user);
+    }
+
+    public static IUserRepository getInstance(){
+        return userRepository;
     }
 }
