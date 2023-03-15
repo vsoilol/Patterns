@@ -8,6 +8,7 @@ import com.example.dao.IUserRepository;
 import com.example.dao.UserRepository;
 import com.example.service.IUserService;
 import com.example.service.UserService;
+import com.example.singletons.UserControllerSingleton;
 import com.example.view.*;
 import com.example.view.command.*;
 
@@ -19,9 +20,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        IUserRepository userRepository = new UserRepository();
-        IUserService userService = new UserService(userRepository);
-        IUserController userController = new UserController(userService);
+        IUserController userController = UserControllerSingleton.getInstance();
 
         IProductController productController = new ProductController();
 
@@ -56,7 +55,7 @@ public class Main {
         Command findProductsByNameAndMaxPriceCommand = new FindProductsByNameAndMaxPriceCommand(
                 "Get products by name and price less then entered", controller, scanner);
         Command getProductsWithStorageTimeAfterCommand = new GetProductsWithStorageTimeAfterCommand(
-                        "Get products whose storage time is longer than the entered", controller, scanner);
+                "Get products whose storage time is longer than the entered", controller, scanner);
 
         Map<Integer, Command> productMenuCommands = new TreeMap<>();
 
