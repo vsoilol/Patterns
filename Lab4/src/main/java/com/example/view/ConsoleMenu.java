@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class ConsoleMenu {
     private final Map<Integer, Command> commands;
     private final Scanner scanner = new Scanner(System.in);
-    private boolean isRunning = true;
     private final String name;
 
     public ConsoleMenu(Map<Integer, Command> commands, String name) {
@@ -20,6 +19,8 @@ public class ConsoleMenu {
     }
 
     public void run() {
+        boolean isRunning = true;
+
         while (isRunning) {
             System.out.println("-----------------------");
             System.out.println("Welcome to the " + name + " Menu");
