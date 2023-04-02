@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ProductRepository implements IProductRepository{
-    public final List<Product> products = new ArrayList<Product>() {
+    public final List<Product> products = new ArrayList<>() {
         {
             add(new Product("Product1",
                     "Manufacturer1",
